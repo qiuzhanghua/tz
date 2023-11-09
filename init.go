@@ -1,14 +1,22 @@
 package main
 
 import (
-	"github.com/qiuzhanghua/common/log"
+	"github.com/labstack/gommon/log"
+	"github.com/qiuzhanghua/common/util"
 	"os"
+	"strings"
 )
 
 func init() {
+	log.SetPrefix("tz")
 	level := os.Getenv("LOGGING_LEVEL")
-	if len(level) == 0 {
-		level = "info"
+	if level == "" {
+		level = "off"
 	}
-	log.SetGlobalLevel(level)
+	format := strings.ToLower(os.Getenv("LOGGING_FORMAT"))
+	if format != "json" {
+		log.SetHeader(`${time_rfc3339_nano}, ${prefix}, ${level} ${short_file}(${line})`)
+	}
+	log.SetLevel(util.LevelOf(level))
+	log.SetOutput(os.Stdout)
 }
