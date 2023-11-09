@@ -3,6 +3,13 @@
 ## Usage
 ```bash
 tz -h
-tz -x <zip> <dir>
-tz -c <zip> <file|dir ...>
+
+# Extract zip to dir
+tz x <zip> <dir>
+
+# Compress files or dirs to zip
+tz c <zip> <file|dir ...>
+
+# List files in zip
+tz t <zip>
 ```
