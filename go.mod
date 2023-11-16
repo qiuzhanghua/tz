@@ -1,4 +1,4 @@
-module tnz
+module tz
 
 go 1.17
 
