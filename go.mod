@@ -2,11 +2,11 @@ module tnz
 
 go 1.17
 
-require github.com/qiuzhanghua/common v0.2.0
+require github.com/qiuzhanghua/common v0.4.1
 
 require github.com/spf13/cobra v1.8.0
 
-require github.com/labstack/gommon v0.4.0
+require github.com/labstack/gommon v0.4.1
 
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
